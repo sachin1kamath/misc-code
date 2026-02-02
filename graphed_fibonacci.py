@@ -1,15 +1,13 @@
-
 import math
-import time
 import matplotlib.pyplot as plt
 
 pi = 3.141
 phi = 1.618
 
-def fibonacci():
+def fibonacci(n):
     sequence = []
     
-    for i in range(20):
+    for i in range(n):
         if i == 0:
             sequence.append(0)
         elif i == 1:
@@ -36,16 +34,16 @@ def list_y(sequence):
     return y_values
 
 def animated_plot(x_list, y_list):
-    plt.ion()  # Turn on interactive mode
+    plt.ion()
     fig, ax = plt.subplots()
     
     for i in range(len(x_list)):
         ax.clear()
-        ax.plot(x_list[:i+1], y_list[:i+1], 'b-o')
+        ax.plot(x_list[:i+1], y_list[:i+1])
         plt.draw()
         plt.pause(0.1)
     
-    plt.ioff()  # Turn off interactive mode
+    plt.ioff()
     plt.show()
 
-animated_plot(list_x(fibonacci()), list_y(fibonacci()))
+animated_plot(list_x(fibonacci(100)), list_y(fibonacci(100)))
