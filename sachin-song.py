@@ -1,11 +1,7 @@
 import random
 
 transitions = {}
-txt = open("./text/moby-multiple-language-lists-of-common-words.txt", "r")
-text = txt.read()
-words = text.split()
-
-starting_words_list = [("the", "the"), ("an", "an"), ("a", "a"), ("this", "this"), ("that", "that"), ("every", "every")]
+starting_words_list = [("we", "we")]
 starting_words = random.choice(starting_words_list)
 
 def make_transitions(text, transition_list):
@@ -47,8 +43,8 @@ def make_sentence(transition_list, starting_words, length):
     for i in range(length):
         
         if current_state not in transition_list:
-             print(".\n\n", end="")
-             break
+            print(".\n\n", end="")
+            break
              
         next_word_counts = transition_list[current_state] 
 
@@ -56,6 +52,8 @@ def make_sentence(transition_list, starting_words, length):
         weights = list(next_word_counts.values())
 
         word = random.choices(words, weights=weights, k=1)[0]
+        while word == current_state:
+            word = random.choices(words, weights=weights, k=1)[0]
 
         if i == length - 1:
             print(word + ".")
@@ -64,7 +62,9 @@ def make_sentence(transition_list, starting_words, length):
 
         current_state = (current_state[1], word)
 
+enhanced_text = "We can work, then we know we can do it together. We're the team! We can work the team together to work out with all our powers we have. We know how to fix things, and we know how to build things. Beep, beep, beep, we know the beep-up. We know how to fix the beep-up away. We know how things go away, we know how things go away, and we know how things go away. We know how things can work. We don't know how to thing... things, things, things that have to work. We know how to do things. We know how to fix things. We know how to fix things! We know how to fix things! We know how to fix things, oh standard fix things. We know how to fix things. How to fix things, we are engineers. We know how to fix things. We are, my engineer, know how to fix things. They know how to do things that they need to do. We know how the power works. How, how power works, and we know how the power works. We know how the power works!"
+
 make_sentence(
-    make_transitions(text, transitions), 
+    make_transitions(enhanced_text, transitions), 
     starting_words, 25
 )
