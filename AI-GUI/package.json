@@ -2,5 +2,13 @@
   "dependencies": {
     "ollama": "^0.6.3",
     "whatwg-fetch": "^3.6.20"
+  },
+  "devDependencies": {
+    "vite": "^8.0.13"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   }
 }

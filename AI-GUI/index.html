@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"></link>
     <script type="module" defer src="javascript.js"></script>
-    <script type="importmap">
-        {
-             "imports": {
-                "ollama": "https://unpkg.com/ollama@1.0.0/browser.cjs"
-            }
-        }
-    </script>
     <title>Document</title>
 </head>
 <body>
@@ -25,7 +18,7 @@
     <main>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.</p>
         <textarea name="input" id="input">Input</textarea>
-        <button onclick="displayResponse(getInput())">Submit</button>
+        <button onclick="displayResponse()">Submit</button>
         <div id="response"></div>
     </main>
     <footer>
