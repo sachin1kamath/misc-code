@@ -1,7 +1,7 @@
 import random
 
 transitions = {}
-txt = open("./text/moby-multiple-language-lists-of-common-words.txt", "r")
+txt = open("textofsomekind", "r")
 text = txt.read()
 words = text.split()
 
